@@ -30,6 +30,37 @@ TARGET_NO_BOOTLOADER := true
 # Inherit from proprietary files
 include vendor/xiaomi/lavender/BoardConfigVendor.mk
 
+# Kernel
+BOARD_KERNEL_SEPARATED_DTBO := true
+
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_PAGESIZE := 4096
+
+BOARD_KERNEL_CMDLINE := \
+    androidboot.hardware=qcom \
+    androidboot.configfs=true \
+    lpm_levels.sleep_disabled=1 \
+    msm_rtb.filter=0x37  \
+    service_locator.enable=1 \
+    androidboot.usbcontroller=a800000.dwc3 \
+    loop.max_part=7 \
+    usbcore.autosuspend=7 \
+    printk.devkmsg=on \
+    ehci-hcd.park=3 \
+    kpti=off
+
+BOARD_KERNEL_CMDLINE += skip_initramfs rootwait ro init=/init
+
+BOARD_BOOT_HEADER_VERSION := 1
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
+TARGET_KERNEL_CONFIG := lavender_defconfig
+TARGET_KERNEL_VERSION := 4.19
+
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := sdm660
