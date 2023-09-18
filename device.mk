@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# API level
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
 
