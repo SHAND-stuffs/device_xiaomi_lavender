@@ -162,9 +162,6 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 # Treble
 BOARD_VNDK_VERSION := current
 
-# Use mke2fs to create ext4 images
-TARGET_USES_MKE2FS := true
-
 # Dex
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 WITH_DEXPREOPT := true
