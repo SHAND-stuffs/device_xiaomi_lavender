@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
     audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
