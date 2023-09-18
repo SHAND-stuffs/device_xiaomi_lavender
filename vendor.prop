@@ -1,2 +1,3 @@
 # Bluetooth
 bluetooth.device.default_name=Redmi Note 7
+bluetooth.hardware.power.operating_voltage_mv=3700
