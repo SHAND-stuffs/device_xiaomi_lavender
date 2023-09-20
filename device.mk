@@ -116,19 +116,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
 
-# Dex
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-ART_BUILD_TARGET_NDEBUG := true
-ART_BUILD_TARGET_DEBUG := false
-ART_BUILD_HOST_NDEBUG := true
-ART_BUILD_HOST_DEBUG := false
-endif
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
