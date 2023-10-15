@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter tulip jasmine_sprout wayne clover lavender platina jason whyred,$(TARGET_DEVICE)),)
+ifneq ($(filter lavender,$(TARGET_DEVICE)),)
 
 $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware)
 

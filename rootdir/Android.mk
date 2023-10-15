@@ -60,6 +60,14 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.device.rc
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/init.device.rc
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.msm.usb.configfs.rc
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
@@ -93,24 +101,10 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE       := init.xiaomi_parts.rc
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.xiaomi_parts.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE       := fstab.qcom
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
-ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-LOCAL_SRC_FILES    := etc/fstab_A.qcom
-else ifeq ($(ENABLE_AB), true)
-LOCAL_SRC_FILES    := etc/fstab_AB.qcom
-else
 LOCAL_SRC_FILES    := etc/fstab.qcom
-endif
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
 
